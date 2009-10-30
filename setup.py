@@ -5,7 +5,7 @@ version = '0.1'
 
 setup(name='raptus.workflownotification',
       version=version,
-      description="Pluggable system to provide a way to send custom notifications to a predefined recipients on a workflow transition",
+      description="Pluggable system to provide a way to send custom notifications to predefined recipients on a workflow transition",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
