@@ -138,6 +138,16 @@ class NotificationForm(formbase.PageForm):
         for id in ('users', 'groups',):
             js.append(self.js_template % dict(id=id,
                                               url=url))
+        js.append("""\
+        jq('document').ready(function() {
+            jq('.workflownotification_form input[name$=send]').click(function() {
+                if(!jq('.workflownotification_form .spinner').length) {
+                    jq('.workflownotification_form input[name$=cancel]').hide();
+                    jq('.workflownotification_form input[name$=send]').blur().hide().after('<img class="spinner" src="spinner.gif" />');
+                }
+            });
+        });
+        """)
         return '\n'.join(js)
 
     @form.action(_p(u"label_send", default=u"Send"))
