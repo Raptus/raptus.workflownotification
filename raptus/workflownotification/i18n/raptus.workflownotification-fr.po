@@ -1,7 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# French translations for zi package
-# Traductions francaises du paquet zi.
-# Simon Käser <skaeser@raptus.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: raptus.workflownotification\n"
@@ -21,31 +17,31 @@ msgstr ""
 
 #: browser/notification_form.py:73
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 #: browser/notification_form.py:66
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #: browser/notification_form.py:98
 msgid "Send notifications"
-msgstr ""
+msgstr "Envoyer les notifications"
 
 #: browser/notification_form.py:69
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #. Default: "New notification from ${site}"
 #: sender.py:25
 msgid "email_subject"
-msgstr ""
+msgstr "Nouvelle notification depuis ${site}"
 
 #. Default: "Default recipients"
 #: browser/notification_form_standalone.pt:5
 msgid "label_default_recipients"
-msgstr ""
+msgstr "Destinataires prédéfinis"
 
 #. Default: "Notifications successfully sent to ${receivers}"
 #: browser/notification_form.py:160
 msgid "message_success"
-msgstr ""
+msgstr "La notification a été envoyée avec succès à ${receivers}"
