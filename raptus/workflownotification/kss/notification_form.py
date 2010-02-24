@@ -20,7 +20,20 @@ class NotificationFormView(Implicit, PloneKSSView):
 
         (proto, host, path, query, anchor) = urlsplit(url)
         action = query.split("workflow_action=")[-1].split('&')[0]
-        context = self.context.restrictedTraverse(os.path.dirname(path))
+        try:
+            context = self.context.restrictedTraverse(os.path.dirname(path))
+        except:
+            try:
+                # virtual hosting in place
+                portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
+                context = self.context.restrictedTraverse('/'.join(portal_state.portal().getPhysicalPath()) + os.path.dirname(path))
+            except:
+                # try to find the object in our context
+                id = os.path.basename(os.path.dirname(path))
+                if id == self.context.getId():
+                    context = self.context
+                if id in self.context.objectIds():
+                    context = self.context[id]
         self.request.URL = '%s/@@workflownotification_form' % context.absolute_url()
         form = getMultiAdapter((context, self.request), name=u'workflownotification_form')(workflow_action=action, standalone=True)
         selector = ksscore.getCssSelector('#contentActionMenus')
