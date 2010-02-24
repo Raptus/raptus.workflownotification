@@ -41,12 +41,20 @@ class WorkflownotificationSender(object):
                            new_state=translate(_p(wftool.getTitleForStateOnType(tdef.new_state_id, self.context.portal_type)), context=self.context.request),
                            transition=translate(_p(tdef.actbox_name), context=self.context.request),
                            issuer=safe_unicode(issuer.get('fullname', issuer['username'])))
-        anon_message = message % replacement
+        try:
+            anon_message = message % replacement
+        except:
+            # replacement failed
+            anon_message = message
         sent = []
         receivers = []
         for r in recipients:
             replacement.update(dict(name=r.name))
-            msg = message % replacement
+            try:
+                msg = message % replacement
+            except:
+                # replacement failed
+                msg = message
             if not r.email in sent:
                 mailhost.secureSend(msg,
                                     mto=r.email,
