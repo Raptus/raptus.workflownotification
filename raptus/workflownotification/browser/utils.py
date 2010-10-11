@@ -22,6 +22,7 @@ class WorkflownotificationView(BrowserView):
             if type(obj) is type(''):
                 obj = portal.restrictedTraverse(obj)
             enabler = INotificationEnabled(obj, None)
+            
             if enabler:
                 transitions.extend(enabler.transitions())
         return transitions

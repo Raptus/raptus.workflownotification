@@ -6,7 +6,6 @@ from zope.component import getMultiAdapter
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope import schema
-from zope.i18n import translate
 from zope.formlib import form
 from zope.app.form.browser.interfaces import ISourceQueryView
 

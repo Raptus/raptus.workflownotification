@@ -9,7 +9,6 @@ class WorkflowMenu(BaseWorkflowMenu):
         notification = INotificationEnabled(context, None)
         if notification is None:
             return items
-        
         transitions = notification.transitions()
         
         for item in items:
