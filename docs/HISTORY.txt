@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0b1 - (2010-10-25)
+--------------------
+
+* plone 4 compatibility
+* replaced kss with plain jquery
+
 0.3 - (2010-02-24)
 ------------------
 

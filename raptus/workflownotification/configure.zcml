@@ -7,9 +7,9 @@
     i18n_domain="raptus.workflownotification">
   
     <five:registerPackage package="." />
-  
+    
+    <include package="raptus.autocompletewidget" />
     <include package=".browser" />
-    <include package=".kss" />
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile

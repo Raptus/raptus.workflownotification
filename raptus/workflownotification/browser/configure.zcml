@@ -53,4 +53,16 @@
         permission="zope.Public"
         />
 
+    <browser:page
+        for="*"
+        name="workflownotification_form-ajax"
+        class=".notification_form.NotificationFormAJAX"
+        permission="zope.Public"
+        />
+
+    <browser:resource
+        name="workflownotification.js"
+        file="workflownotification.js"
+        />
+
 </configure>

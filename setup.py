@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3'
+version = '1.0b1'
 
 setup(name='raptus.workflownotification',
       version=version,
@@ -15,8 +15,8 @@ setup(name='raptus.workflownotification',
         ],
       keywords='plone workflow notification',
       author='Raptus AG',
-      author_email='skaeser@raptus.com',
-      url='http://plone.org/products/raptus.workflownotification',
+      author_email='dev@raptus.com',
+      url='http://raptus.com',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['raptus'],

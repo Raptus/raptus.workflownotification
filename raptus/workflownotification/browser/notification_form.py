@@ -1,3 +1,5 @@
+import os
+from urlparse import urlsplit
 from Acquisition import aq_base, aq_inner, aq_parent
 from AccessControl import Unauthorized
 
@@ -206,3 +208,9 @@ class NotificationForm(formbase.PageForm):
         });
     })(jQuery);
     """
+
+class NotificationFormAJAX(BrowserView):
+    def __call__(self, workflow_action):
+        self.request.URL = '%s/@@workflownotification_form' % self.context.absolute_url()
+        form = getMultiAdapter((self.context, self.request), name=u'workflownotification_form')(workflow_action=workflow_action, standalone=True)
+        return form.replace('class="workflownotification_form"', 'class="workflownotification_form" id="js-workflownotification_form"')
